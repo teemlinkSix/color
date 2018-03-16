@@ -1,0 +1,16 @@
+(function(){
+var doc= getCurrentDocument();
+var userlist = createObject("java.util.ArrayList");
+var datas=doc.getItemValueAsString("user");//user为用户选择框
+println("datas----"+datas);
+if(datas.trim().length()>0 && datas!=null){
+var userid = splitText(datas,";");//将多个用户的id分开，变成一个数组
+println("userid----"+userid);
+for(var i=0;i<userid.length;i++){
+	println("userid----"+userid);
+	var userVO = getUserById(userid[i]);  //根据用户编号获取用户对象
+	userlist.add(userVO)
+    }
+}
+return userlist;
+})()

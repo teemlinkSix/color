@@ -1,0 +1,26 @@
+(function(){
+        var flowid="11de-a2a0-79d4ce27-8c1d-0b6b93814a0e";   //流程Id
+        var comment = "系统自动流转";          //备注
+        var flowoption = "80";           //流程操作参数   
+        var user=getWebUser();         //当前用户对象为审批人   
+        var process = getDocumentProcess();//申明文档业务处理类
+        var params = createParamsTable();                        
+        params.setParameter("_flowid", flowid);                
+        var st=new Packages.cn.myapps.core.workflow.engine.StateMachine();
+        var doc=getCurrentDocument();
+		
+        //getCurrUserNodeRT的第二个参数必须是第一个参数的审批人
+        var nodert = st.getCurrUserNodeRT(doc,user);
+                if(nodert != '' && nodert != null){
+                        var currentId = nodert.getNodeid();//获取流程当前流程节点ID
+                        var nextFlow = doc.getState(currentId).getFlowVO().toFlowDiagram().getNextNodeList(currentId,doc,params,user);
+						
+						
+                        var nextFlowId = nextFlow.iterator().next().id;//下一流程节点ID
+                        var nextNodeId = new Array();
+                        nextNodeId[0] = nextFlowId;
+                        process.doFlow(doc,params,currentId,nextNodeId,flowoption,comment,user);        //流程处理  
+
+        }
+        return "";
+})()

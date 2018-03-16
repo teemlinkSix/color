@@ -1,0 +1,32 @@
+(function(){
+	//点评人，点评内容，点评时间，对应文档id
+	var doc = getCurrentDocument();
+	var id=doc.getId(); //对应文档id
+	var sql = "select * from TLK_评论单 where ITEM_文档ID='"+id+"' ORDER BY `ITEM_评论时间` DESC";
+	var query = queryBySQL(sql);
+	//所需字段的值查找出来
+	
+	//制作列头
+	var html="";
+		html+="<table cellSpacing='0' cellPadding='1' width='100%' align='center' style='border:solid #cccccc;border-width:1px 0px 0px 1px;table-layout:fixed'><tbody> ";
+		html+=" <tr style='line-height:10px;'> ";
+		html+=" 		<td style='align:center;font-size:larger;font-family: Arial;border:solid #cccccc;border-width:0px 1px 1px 0px;background-color:#EFF0F1;width='20%';' >点评人</td>  ";
+		html+=" 		<td style='align:center;font-size:larger;font-family: Arial;border:solid #cccccc;border-width:0px 1px 1px 0px;background-color:#EFF0F1;width='60%';' >点评内容</td> ";
+		html+="         <td style='align:center;font-size:larger;font-family: Arial;border:solid #cccccc;border-width:0px 1px 1px 0px;background-color:#EFF0F1;width='20%';' >点评时间</td> ";
+		html+="</tr>";
+	//添加数据
+		if(query!=null){
+		for(var its = query.iterator();its.hasNext();){
+			var datas=its.next();  
+			var xmNum=datas.getItemValueAsString("评论人");
+			var xmName=datas.getItemValueAsString("评论内容");
+			var xmType_x=datas.getItemValueAsDate("评论时间");
+			html+="<tr><td style='border:1px #000 solid; word-wrap:break-word'>"+xmNum;
+			html+="</td><td style='border:1px #000 solid; word-wrap:break-word'>"+xmName;
+			html+="</td><td style='border:1px #000 solid; word-wrap:break-word'>"+xmType_x;
+			html+="</td></tr>";
+		}
+		html+=" </tbody></table>";
+	}
+	return html;
+})();

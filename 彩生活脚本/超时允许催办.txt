@@ -1,0 +1,13 @@
+var doc = getCurrentDocument();
+var rtn = false;
+var starttime =doc. getItemValueAsDate("开始日期天");
+var curdate = getCurDate("yyyy-MM-dd HH:mm:ss");
+var diff="";
+if(starttime!=null&&curdate!=null)
+{
+      starttime = format (starttime,"yyyy-MM-dd HH:mm:ss");
+      diff = diffDays(starttime,curdate);
+	  if(diff>=2){
+	  rtn = true;
+}
+rtn;

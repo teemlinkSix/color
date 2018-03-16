@@ -1,0 +1,8 @@
+(function(){
+  var value= getItemValueAsDouble("taxPayable");
+	var rnt = "";
+	if (value<0){
+	     rnt = "应纳稅额必须大于0";
+	}
+	return rnt;
+})()

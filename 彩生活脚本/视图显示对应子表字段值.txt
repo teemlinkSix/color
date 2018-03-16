@@ -1,0 +1,15 @@
+var doc = getCurrentDocument();
+var application = getApplication();
+var p_id = doc.getId();
+var value="";
+var sql="select * from `tlk_信访人信息` where PARENT = '"+ p_id+"' ORDER BY ID asc LIMIT 1 ";
+var query1= queryBySQL(sql);
+println("============="+sql);
+for (var iter = query1.iterator(); iter.hasNext();) {
+        println("============="+sql);
+
+                var adoc = iter.next();
+                value = adoc.getItemValueAsString("姓名");
+                
+                }
+value;   

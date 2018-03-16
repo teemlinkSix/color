@@ -1,0 +1,51 @@
+(function(){
+var process = getDocProcess(getApplication()); //创建文档操作类对象
+var domainid = getDomainid();
+var sql="select * from tlk_盖章申请主表 where STATELABEL='CXO' or STATELABEL='大区事业部负责人' or STATELABEL='城市事业部负责人-事业部章' or STATELABEL='大区负责人'";
+var query = process.queryBySQL(sql,domainid).datas;
+if(query!=null){
+	      var iter  =query.iterator();
+	      if(iter != null && iter.hasNext()){
+		       doc = iter.next();
+			   var docid = doc.getId();
+			   var file = doc.getItemValueAsString("file");
+			   var files = file.split("}");
+			   lenth = files.length-1
+			   var sql_son = "select * from tlk_ContractInfo where PARENT = '"+docid+"'";
+			   var t_count = countBySQL(sql_son);
+			   if(lenth=t_count){
+			   //执行自动提交流程
+			   var flowid="11e7-e6d8-3b7f6b58-9d0a-1553beca36d6";   //盖章流程Id
+			   var comment = "系统自动流转";          //备注
+               var flowoption = "80";           //流程操作参数   
+               var process = getDocumentProcess();//申明文档业务处理类
+			   var params = getParamsTable()||createParamsTable();                        
+			   params.setParameter("_flowid", flowid);  
+			   var webuser="";
+               var actors = doc.getState().getActors(); //获取流程节点的所有审批人
+			   for(var it11 = actors.iterator(); it11.hasNext();){
+					var actor = it11.next();
+					var uservo=getUserById(actor.getActorid());
+					webuser=new Packages.cn.myapps.core.user.action.WebUser(uservo);
+					break;		
+				}					 			   
+			   var st=new Packages.cn.myapps.core.workflow.engine.StateMachine();
+			   //getCurrUserNodeRT         的第二个参数必须是第一个参数的审批人
+			   var nodert = st.getCurrUserNodeRT(doc,webuser);
+
+			   if(nodert != '' && nodert != null){
+					var currentId = nodert.getNodeid();//获取流程当前流程节点ID
+					
+                    var nextFlow = doc.getState(currentId).getFlowVO().toFlowDiagram().getNextNodeList(currentId,doc,params,webuser);
+                    var nextFlowId = nextFlow.iterator().next().id;//下一流程节点ID
+                    var nextNodeId = new Array();
+                    nextNodeId[0] = nextFlowId;
+                    process.doFlow(doc,params,currentId,nextNodeId,flowoption,comment,webuser);        //流程处理
+			   }
+        }
+		}
+		}
+        return "";
+})()
+		   
+			   

@@ -1,0 +1,132 @@
+//表单A字段的选项为获取指定部门、角色下的所有用户对象
+//dptied：部门ID
+//roleid:岗位ID
+(function(){
+var  dptid= getItemValueAsString("productCompany"); 
+var roleid=getRoleIdByName("大区事业部负责人");
+var users = getUsersByDptIdAndRoleId(dptid,roleid);
+return users;
+})()
+
+
+//表单A字段的选项为获取指定部门、角色下的所有用户对象
+//dptied：部门ID
+//roleid:岗位ID
+(function(){
+var  dptid= "92ca64a5-8865-4777-ae3d-8809c931b25f"; //培训招聘公司id
+var roleid=getRoleIdByName("部门负责人");
+var users = getUsersByDptIdAndRoleId(dptid,roleid);
+return users;
+})()
+
+//表单A字段的选项为获取指定部门、角色下的所有用户对象
+//dptied：部门ID
+//roleid:岗位ID
+(function(){
+var  dptid= "a224ae8a-9ee7-4f9e-8c5d-6a7d0f71c3cb"; //生态圈与投资者关系中心id
+var roleid=getRoleIdByName("副总裁");
+var users = getUsersByDptIdAndRoleId(dptid,roleid);
+return users;
+})()
+
+//表单A字段的选项为获取指定部门、角色下的所有用户对象
+//dptied：部门ID
+//roleid:岗位ID
+(function(){
+var  dptid= "0577fc41-3642-41a7-882a-26a824ee9055"; //集中管控中心id
+var roleid=getRoleIdByName("部门负责人");
+var users = getUsersByDptIdAndRoleId(dptid,roleid);
+return users;
+})()
+
+//表单A字段的选项为获取指定部门、角色下的所有用户对象
+//dptied：部门ID
+//roleid:岗位ID
+(function(){
+var  dptid= "f8315f98-dbba-4638-b108-9e721a59d68e"; //预算成本部id
+var roleid=getRoleIdByName("部门负责人");
+var users = getUsersByDptIdAndRoleId(dptid,roleid);
+return users;
+})()
+
+//表单A字段的选项为获取指定部门、角色下的所有用户对象
+//dptied：部门ID
+//roleid:岗位ID
+(function(){
+var  dptid= "c8e567a3-7b53-45a1-a230-e1e52b07213a"; //财务报告部id
+var roleid=getRoleIdByName("部门负责人");
+var users = getUsersByDptIdAndRoleId(dptid,roleid);
+return users;
+})()
+
+//表单A字段的选项为获取指定部门、角色下的所有用户对象
+//dptied：部门ID
+//roleid:岗位ID
+(function(){
+var  dptid= "36cd1ef6-9af1-4203-85a1-c24a119a2185"; //产品设计与推进部id
+var roleid=getRoleIdByName("部门负责人");
+var users = getUsersByDptIdAndRoleId(dptid,roleid);
+return users;
+})()
+
+
+//表单A字段的选项为获取指定部门、角色下的所有用户对象
+//dptied：部门ID
+//roleid:岗位ID
+(function(){
+var  dptid= "0d3d5ff8-6ddd-4956-b775-66ebcb087509"; //集团大运营中心id
+var roleid=getRoleIdByName("高级总监");
+var users = getUsersByDptIdAndRoleId(dptid,roleid);
+return users;
+})()
+
+//表单A字段的选项为获取指定部门、角色下的所有用户对象
+//dptied：部门ID
+//roleid:岗位ID
+(function(){
+var  dptid= "a92c6602-793e-4250-8096-def8db61da4f"; //产品服务财务部id
+var roleid=getRoleIdByName("部门负责人");
+var users = getUsersByDptIdAndRoleId(dptid,roleid);
+return users;
+})()
+
+//表单A字段的选项为获取指定部门、角色下的所有用户对象
+//dptied：部门ID
+//roleid:岗位ID
+(function(){
+var  dptid= "d193da53-5831-40e5-a092-c5b24197d93a"; //税务部id
+var roleid=getRoleIdByName("部门负责人");
+var users = getUsersByDptIdAndRoleId(dptid,roleid);
+return users;
+})()
+
+//表单A字段的选项为获取指定部门、角色下的所有用户对象
+//dptied：部门ID
+//roleid:岗位ID
+(function(){
+var  dptid= "dc15bf89-9866-4726-afbb-26af71bce791"; //资金管控部id
+var roleid=getRoleIdByName("出纳");
+var users = getUsersByDptIdAndRoleId(dptid,roleid);
+return users;
+})()
+
+//表单A字段的选项为获取指定部门、角色下的所有用户对象
+//dptied：部门ID
+//roleid:岗位ID
+(function(){
+var  dptid= getItemValueAsString("district"); 
+var roleid=getRoleIdByName("综合部负责人");
+var users = getUsersByDptIdAndRoleId(dptid,roleid);
+return users;
+})()
+
+
+//表单A字段的选项为获取指定部门、角色下的所有用户对象
+//dptied：部门ID
+//roleid:岗位ID
+(function(){
+var  dptid= "dc15bf89-9866-4726-afbb-26af71bce791"; //资金管控部id
+var roleid=getRoleIdByName("部门负责人");
+var users = getUsersByDptIdAndRoleId(dptid,roleid);
+return users;
+})()

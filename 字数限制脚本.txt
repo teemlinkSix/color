@@ -1,0 +1,10 @@
+var msg = '';
+var rtn = getItemValue("申请原因"); 
+if (rtn==null || rtn.length()==0){
+	msg = "申请原因不能为空";
+	}
+if(rtn.length()>80){
+	msg = "申请原因不能超过80个字";
+	}
+msg;
+

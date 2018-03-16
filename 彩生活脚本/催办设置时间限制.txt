@@ -1,0 +1,19 @@
+(function(){
+var flag = false;
+var doc = getCurrentDocument();
+var starttime= getToday();
+println(starttime+"starttime");
+var lastApprovedTime =doc.getLastmodified();
+println(lastApprovedTime+"lastApprovedTime");
+var diff = "";
+if(starttime!=null&&lastApprovedTime!=null)
+{
+  starttime = format (starttime,"yyyy-MM-dd HH:mm:ss");
+  lastApprovedTime= format(lastApprovedTime,"yyyy-MM-dd HH:mm:ss");
+  diff = diffHours(lastApprovedTime,starttime);
+}
+if(diff>=48){
+	flag = true;
+}
+return flag;
+})()

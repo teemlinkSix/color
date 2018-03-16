@@ -1,0 +1,23 @@
+(function(){
+var doc = getCurrentDocument();
+var projectBenefit = getItemValueAsDouble("projectBenefit");
+var divisionBenefit = getItemValueAsDouble("divisionBenefit");
+var sum="";
+if( projectBenefit!=null || divisionBenefit!=null)
+{
+      sum = projectBenefit+divisionBenefit;
+}
+return sum;
+})()
+
+
+#include "金额转换";
+(function(){
+var str = "人民币： "
+var  moneySum= getItemValueAsString("moneySum"); 
+if(moneySum!=""){
+var dx = DX(moneySum);
+str = str+dx;
+}
+return str;
+})()

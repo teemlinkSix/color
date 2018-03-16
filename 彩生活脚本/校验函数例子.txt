@@ -1,0 +1,11 @@
+function checkEmpty(fieldName) {
+	var doc = $CURRDOC.getCurrDoc();
+	var value = doc.getItemValueAsString(fieldName);
+	var retvar = "";
+	if(value==null || value.trim().length()<=0) {
+
+	  retvar = fieldName + "必需填写！";
+	}
+         $PRINTER.println("*****retvar->"+retvar);
+	return retvar;
+}

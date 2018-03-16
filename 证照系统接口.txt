@@ -1,0 +1,21 @@
+﻿#include"addContractInfo"
+(function(){
+	var rtn ="";
+	var doc=getCurrentDocument();
+	var formName = "ContractInfo";  //子表名称
+	var parentId = doc.getId();  //主表的docid
+	println("parentId---------"+parentId)
+	var applicationId = getApplication(); //软件id
+	var orgUuid = doc.getItemValueAsString("legalRepresentative");  //法人架构的key
+	var uploads = doc.getItemValueAsString("file");
+	var dateTime = doc.getItemValueAsString("validityDate");
+	println("orgUuid----"+orgUuid)
+	println("uploads----"+uploads)
+	println("dateTime----"+dateTime)
+	var jsonsrt = addContractInfo(formName,parentId,applicationId,dateTime,orgUuid,uploads);
+	var msg = Packages.net.sf.json.JSONObject.fromObject(jsonsrt);
+	if(msg.getInt("stateCode")==500){
+		rtn = msg.getString("message");
+	}
+	return rtn;
+})()

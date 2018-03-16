@@ -1,0 +1,2 @@
+﻿var rtn = "<a href = 'http://office.teemlink.com:65533/Z1IGV321IFS/uploads/item/2017/0571d68f-63e3-4795-92ed-7de0902d4c7e.xlsx' target = '_blank' >工资补贴明细表下载模板</a>"
+rtn;

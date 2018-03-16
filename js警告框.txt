@@ -1,0 +1,31 @@
+<script language="javascript">
+function showConfirm(_val,_val2){
+	if(_val == "事业部章" && _val2=="集团"){
+		var con;
+		con = confirm("您属于集团下的员工，您确定要选事业部章吗?");
+		if(con==false){
+			document.getElementsByName("sealType")[0].length=0;
+		}
+		}
+	if(_val == "事业部章" && _val2=="大区"){
+		var con;
+		con = confirm("您属于大区下的员工，您确定要选事业部章吗?");
+		if(con==false){
+			document.getElementsByName("sealType")[0].length=0;
+		}	
+		}
+	if(_val == "事业部章" && _val2=="产品公司"){
+		var con;
+		con = confirm("您属于产品公司下的员工，您确定要选事业部章吗?");	
+		if(con==false){
+			document.getElementsByName("sealType")[0].length=0;
+		}
+		}
+}
+setTimeout(function(){
+	$("select[name='sealType']").change(function(){
+		showConfirm(this.value,$("input[name='userType']").val());
+	});
+	showConfirm($("select[name='sealType']").val(),$("input[name='userType']").val());
+},500);
+</script>

@@ -1,0 +1,22 @@
+<script>
+function showOrHide(_val){
+	if(_val == "退回业主账户"){
+		$("#owner").show();
+		$("#operation").hide();	
+	}
+	if(_val == "转管理费"){
+		$("#operation").show();
+		$("#owner").hide();	
+	}
+	if(_val == ""){
+		$("#owner").hide();
+		$("#operation").hide();	
+	}
+}
+setTimeout(function(){
+	$("select[name='depositWay']").change(function(){
+		showOrHide(this.value);
+	});
+	showOrHide($("select[name='depositWay']").val());
+},500);
+</script>

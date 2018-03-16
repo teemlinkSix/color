@@ -1,0 +1,27 @@
+
+跳转到别的视图列表：参照一下脚本，只需替换//视图id
+(function(){
+        var request = $WEB.getParamsTable().getHttpRequest();   //获取当前request
+				
+        //var doc= getdocentDocument();
+        //var numbereds=doc.getId();   //獲取當前文檔id
+			
+        var url1="http://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath(); //url頭
+				
+        var view_id="11e7-bf04-a0ca346a-a8b0-878f8050bab2";   //视图id
+		
+        var newUrl = url1+ "/portal/dynaform/view/displayView.action?&_viewid="+view_id+"&clearTemp=true&application="+getApplication();
+		
+		var user = getWebUser();
+			if(user.getEquipment()==1){
+				 var rnt = "<a style=\"cursor:pointer;\" onclick=\"event.stopPropagation(); ajaxPage.useViewAction('" + newUrl + "');\"><font color='blue' >查看历史申请记录	</font></a>";
+			}
+			else{
+				var rnt = "<a style=\"cursor:pointer;\" onclick=\"OBPM.dialog.show({opener:window.parent,title:'个人行政费用申请记录',url:'"+newUrl+"',width:1000,height:500,close:function(){}})\"><font color='blue' >查看历史申请记录	</font></a>";
+			}
+		   return rnt;	
+})();		
+
+另一種打開方式：
+				var rnt = "<a style=\"cursor:pointer;\" onclick=\"event.stopPropagation(); window.location.href='" + newUrl + "'\"><font color='blue' >顯示字體</font></a>";
+		

@@ -1,0 +1,32 @@
+﻿var uuid = new Packages.cn.myapps.util.sequence.Sequence();
+var doc = getCurrentDocument();
+var id=doc.getId(); //对应文档id
+var AUTHOR=getWebUser().getId();
+
+var cxmbh = doc.getItemValueAsString("cxmbh"); //项目编号
+var csscplx = doc.getItemValueAsString("csscplx"); //所属产品类型
+var cxmmc = doc.getItemValueAsString("cxmmc"); //项目名称
+var cglcase = doc.getItemValueAsString("cglcase"); //关联CASE号
+var cxmlx = doc.getItemValueAsString("cxmlx"); //项目类型
+var taskType = doc.getItemValueAsString("taskType"); //任务单类型
+var cxmdj = doc.getItemValueAsString("cxmdj"); //项目等级
+var cndxs = doc.getItemValueAsString("cndxs"); //难度系数
+var cxmnrms = doc.getItemValueAsString("cxmnrms"); //项目内容描述
+var ckfzcyykfl = doc.getItemValueAsString("ckfzcyykfl"); //开发组成员与开发量
+var cxmkssj = doc.getItemValueAsString("cxmkssj"); //项目开始时间
+var ccmjssj = doc.getItemValueAsString("ccmjssj"); //项目结束时间
+
+var time = format(getToday(),"yyyy-MM-dd HH:mm:ss")//当前系统时间
+var FORMID="11e7-e6c3-46cdc165-9d0a-1553beca36d6"; //表单id
+var applicationId=getApplication();//软件id
+var domainid = getDomainid(); //企业域id
+
+
+var sql1 = "INSERT INTO OBPMAPP.T_DOCUMENT (ID,LASTMODIFIED,FORMNAME,AUDITDATE,AUTHOR,CREATED,FORMID,ISTMP,VERSIONS,APPLICATIONID,LASTMODIFIER,DOMAINID,MAPPINGID) VALUES ('"+uuid.getSequence()+"','"+time+"','彩生活/彩生活审批模块/项目任务单审批/项目变更单','"+time+"','"+AUTHOR+"','"+time+"','"+FORMID+"',false,1,'"+applicationId+"','"+time+"','"+domainid+"','"+uuid.getSequence()+"')";
+println("sql1-----"+sql1);
+insertByDSName("彩生活2",sql1);
+
+
+var sql2="INSERT INTO TLK_项目变更单 (ID,LASTMODIFIED,FORMNAME,STATEINT,AUTHOR,CREATED,FORMID,ISTMP,VERSIONS,APPLICATIONID,STATELABEL,AUDITORNAMES,LASTMODIFIER,DOMAINID,AUDITORLIST,ITEM_文档ID,ITEM_BGXMBH,ITEM_BGSSCPLX,ITEM_BGXMMC,ITEM_BGGLCASE,ITEM_BGXMLX,ITEM_BGTASKTYPE,ITEM_BGXMDJ,ITEM_BGNDXS,ITEM_BGYXMNRMS,ITEM_BGKFCYYKFL,ITEM_BGSTARTTIME,ITEM_BGENDTIME) VALUES ('"+uuid.getSequence()+"','"+time+"','彩生活/彩生活审批模块/项目任务单审批/项目变更单',0,'"+AUTHOR+"','"+time+"','"+FORMID+"',false,'1','"+applicationId+"','','','"+AUTHOR+"','"+domainid+"','{}','"+id+"','"+cxmbh+"','"+csscplx+"','"+cxmmc+"','"+cglcase+"','"+cxmlx+"','"+taskType+"','"+cxmdj+"','"+cndxs+"','"+cxmnrms+"','"+ckfzcyykfl+"','"+cxmkssj+"','"+ccmjssj+"')"
+println("sql2-------"+sql2);
+insertByDSName("彩生活2",sql2);

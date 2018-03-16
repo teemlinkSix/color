@@ -1,0 +1,20 @@
+103.37.147.124
+51804
+pengzheng
+2017@pengzheng
+
+
+
+
+
+(function(){
+var rnt = false;
+var budgetType=getRoleIdByName("budgetType");
+if(budgetType==""){
+	rnt = true;
+}
+return rnt;
+})()
+
+
+

@@ -1,0 +1,11 @@
+createConfirm("删除后就无法恢复，是否继续？");
+
+
+
+#include "actionLib";
+deleteDoc();
+
+
+
+#include "boolenLib";
+isDeleteDoc();

@@ -1,0 +1,101 @@
+<p>&nbsp;</p>
+<table width="80%" align="center" border="1" cellpadding="5" cellspacing="1" style="border: 1px solid rgb(180, 204, 238);">
+    <tbody>
+        <tr>
+            <td style="border: 1px solid rgb(180, 204, 238); text-align: center;" colspan="4" height="40"><span style="font-size: larger;"><strong>盖章申请</strong></span></td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid rgb(180, 204, 238);" colspan="4">
+            <p><strong>提交人信息</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid rgb(180, 204, 238);" width="15%">员工OA</td>
+            <td style="border: 1px solid rgb(180, 204, 238);">&nbsp;<input classname="cn.myapps.core.dynaform.form.ejb.InputField" id="11e7-dee2-cf34d2d7-a4e8-9f75859f51f2" text="readonly" name="userNo" texttype="readonly" fieldtype="VALUE_TYPE_VARCHAR" fieldkeyevent="Tabkey" readonlyshowvalonly="true" discript="员工OA" validaterule="" valuescript="getWebUser().getLoginno()" hiddenscript="" hiddenvalue="" hiddenprintscript="" printhiddenvalue="" readonlyscript="" refreshonchanged="false" isdefaultvalue="false" calculateonrefresh="false" mobile="true" numberpattern="" filtercondition="" validatelibs="" editmode="01" refreshmode="0" refreshfields="" processdescription="[];[]" /></td>
+            <td style="border: 1px solid rgb(180, 204, 238);" width="15%">姓名</td>
+            <td style="border: 1px solid rgb(180, 204, 238);">&nbsp;<input classname="cn.myapps.core.dynaform.form.ejb.InputField" id="11e7-dee2-df2f8d7e-a4e8-9f75859f51f2" text="readonly" name="userName" texttype="readonly" fieldtype="VALUE_TYPE_VARCHAR" fieldkeyevent="Tabkey" readonlyshowvalonly="true" discript="" validaterule="" valuescript="getWebUser().getName();" hiddenscript="" hiddenvalue="" hiddenprintscript="" printhiddenvalue="" readonlyscript="" refreshonchanged="false" isdefaultvalue="false" calculateonrefresh="false" mobile="true" numberpattern="" filtercondition="" validatelibs="" editmode="01" refreshmode="0" refreshfields="" processdescription="[];[]" /></td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid rgb(180, 204, 238);">所属部门</td>
+            <td style="border: 1px solid rgb(180, 204, 238);">&nbsp;<select classname="cn.myapps.core.dynaform.form.ejb.DepartmentField" id="11e7-dee2-f38c42b5-a4e8-9f75859f51f2" type="text" name="userDeptId" refreshonchanged="true" readonlyshowvalonly="true" isdefaultvalue="false" calculateonrefresh="true" mobile="true" valuescript="var@nbsp;userVO=@nbsp;getWebUser();@amp;#13;var@nbsp;deptId@nbsp;=@nbsp;userVO.getDefaultDepartment();@amp;#13;deptId;@amp;#13;" validaterule="" hiddenscript="" hiddenvalue="" hiddenprintscript="" printhiddenvalue="" readonlyscript="" fieldtype="VALUE_TYPE_VARCHAR" texttype="readonly" limitbyuser="false" departmentlevel="-1" relatedfield="" isdepartmentfield="true" defaultoptiontype="256" allowempty="false" discript="" filtercondition="" processdescription="[];[]" validatelibs="" refreshmode="0" refreshfields="" editmode="01"></select></td>
+            <td style="border: 1px solid rgb(180, 204, 238);">申请日期</td>
+            <td style="border: 1px solid rgb(180, 204, 238);">&nbsp;<input classname="cn.myapps.core.dynaform.form.ejb.DateField" id="11e7-dee3-2dd13fc0-a4e8-9f75859f51f2" type="text" fieldtype="VALUE_TYPE_DATE" name="applicationDate" refreshonchanged="false" readonlyshowvalonly="true" isdefaultvalue="false" calculateonrefresh="false" mobile="true" limit="false" prev_name="" discript="申请日期" valuescript="(function(){@amp;#13;var@nbsp;starttime@nbsp;=@nbsp;getItemValueAsDate(@quot;applicationDate@quot;);@amp;#13;if(starttime==null)@nbsp;{@amp;#13;@nbsp;@nbsp;@nbsp;@nbsp;starttime=@nbsp;getToday();@nbsp;@nbsp;//当前日期@amp;#13;}@amp;#13;return@nbsp;starttime;@amp;#13;})()" validaterule="" hiddenscript="" hiddenvalue="" hiddenprintscript="" printhiddenvalue="" readonlyscript="" texttype="readonly" filtercondition="" datepattern="YMD" processdescription="[];[]" validatelibs="" refreshmode="0" refreshfields="" editmode="01" /></td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid rgb(180, 204, 238);" colspan="4"><strong>详细信息</strong></td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid rgb(180, 204, 238);" height="25">法人架构</td>
+            <td><input classname="cn.myapps.core.dynaform.form.ejb.SuggestField" type="text" id="11e7-e952-b8d77f3f-9e78-6b30e7728fcb" name="legalRepresentative" discript="法人架构" valuescript="" optionsscript="#include@quot;getLegalPersonTree@quot;@amp;#13;(function(){@amp;#13;&#9;var@nbsp;opts@nbsp;=@nbsp;getLegalPersonTree()@amp;#13;&#9;return@nbsp;opts;&#9;@amp;#13;})()" validaterule="" hiddenscript="" hiddenvalue="" hiddenprintscript="" printhiddenvalue="" texttype="text" readonlyscript="" fieldtype="VALUE_TYPE_VARCHAR" processdescription="[];[]" filtercondition="" refreshonchanged="false" readonlyshowvalonly="true" isdefaultvalue="false" calculateonrefresh="false" mobile="true" validatelibs="" editmode="01" optionseditmode="01" dialogview="" module="" optionsvalue="" optionstext="" refreshmode="0" refreshfields="" datamode="local" /></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid rgb(180, 204, 238);" height="25">盖章类型</td>
+            <td>&nbsp;<select classname="cn.myapps.core.dynaform.form.ejb.SelectField" id="11e7-dee3-d6987e90-a4e8-9f75859f51f2" name="sealType" discript="" readonlyshowvalonly="true" valuescript="" optionsscript="//给表单有选项脚本的控件创建选项@nbsp;@nbsp;(选项脚本)@amp;#13;(function(){@amp;#13;var@nbsp;opts@nbsp;=@nbsp;$TOOLS.createOptions();@nbsp;//创建指定类对象@amp;#13;opts.add(@quot;@quot;,@quot;@quot;);@amp;#13;opts.add(@quot;总部章@quot;,@quot;总部章@quot;);@amp;#13;opts.add(@quot;事业部章@quot;,@quot;事业部章@quot;);@amp;#13;opts.add(@quot;大区章@quot;,@quot;大区章@quot;);@amp;#13;return@nbsp;opts;@amp;#13;})()" validaterule="" hiddenscript="" hiddenvalue="" hiddenprintscript="" printhiddenvalue="" texttype="text" readonlyscript="" fieldtype="VALUE_TYPE_VARCHAR" processdescription="[];[]" filtercondition="" refreshonchanged="true" isdefaultvalue="false" calculateonrefresh="false" mobile="true" validatelibs="" editmode="01" optionseditmode="01" dialogview="" module="" optionsvalue="" refreshmode="0" refreshfields="" optionstext=""></select></td>
+            <td>&nbsp;合同生效截止日期</td>
+            <td><input classname="cn.myapps.core.dynaform.form.ejb.DateField" id="11e7-e951-ed665963-9e78-6b30e7728fcb" type="text" fieldtype="VALUE_TYPE_DATE" name="validityDate" refreshonchanged="false" readonlyshowvalonly="true" isdefaultvalue="false" calculateonrefresh="false" mobile="true" limit="false" prev_name="" discript="合同有效时间" valuescript="" validaterule="" hiddenscript="" hiddenvalue="" hiddenprintscript="" printhiddenvalue="" readonlyscript="" texttype="text" filtercondition="" datepattern="YMD_HMS" processdescription="[];[]" validatelibs="" refreshmode="0" refreshfields="" editmode="01" /></td>
+        </tr>
+        <tr>
+            <td id="yzdq" style="border: 1px solid rgb(180, 204, 238);" height="25">印章所属大区</td>
+            <td id="yzdq2"><select classname="cn.myapps.core.dynaform.form.ejb.SelectField" id="11e7-df09-067463a8-a4e8-9f75859f51f2" name="district" discript="" readonlyshowvalonly="true" valuescript="" optionsscript="var@nbsp;a@nbsp;=@nbsp;@quot;2de01367-5fe4-4672-9211-5562807b1d84@quot;@nbsp;//深圳大区事业部id@amp;#13;var@nbsp;b=@quot;378ec265-a752-476d-936a-e84345a80798@quot;@nbsp;//华南大区事业部id@amp;#13;var@nbsp;c=@quot;475778ae-7314-4055-a386-74ea50060804@quot;@nbsp;//华东大区事业部id@amp;#13;var@nbsp;d=@quot;c54a52a8-0c8c-41b9-a54a-2bd1fdd64edc@quot;@nbsp;//西南大区事业部id@amp;#13;var@nbsp;e=@quot;ce3f792d-bb47-407b-9389-8c765ab50eb6@quot;@nbsp;//东北大区事业部id@amp;#13;var@nbsp;f=@quot;61e903c9-f149-4760-b46b-003a6a3ea3f4@quot;@nbsp;//两广大区事业部id@amp;#13;var@nbsp;g=@quot;9c2fde80-0e00-4182-bc4b-bf8233e1dc8d@quot;@nbsp;//西北大区事业部id@amp;#13;var@nbsp;h=@quot;dabe27a3-ab1d-4181-aa04-1317cf4b1f44@quot;//华中大区事业部id@amp;#13;var@nbsp;opts@nbsp;=@nbsp;$TOOLS.createOptions();@nbsp;//创建指定类对象@amp;#13;opts.add(@quot;@quot;,@quot;@quot;);@amp;#13;opts.add(@quot;深圳大区事业部@quot;,a);@amp;#13;opts.add(@quot;华南大区事业部@quot;,b);@amp;#13;opts.add(@quot;华东大区事业部@quot;,c);@amp;#13;opts.add(@quot;西南大区事业部@quot;,d);@amp;#13;opts.add(@quot;东北大区事业部@quot;,e);@amp;#13;opts.add(@quot;两广大区事业部@quot;,f);@amp;#13;opts.add(@quot;西北大区事业部@quot;,g);@amp;#13;opts.add(@quot;华中大区事业部@quot;,h);@amp;#13;opts;" validaterule="" hiddenscript="" hiddenvalue="" hiddenprintscript="" printhiddenvalue="" texttype="text" readonlyscript="" fieldtype="VALUE_TYPE_VARCHAR" processdescription="[];[]" filtercondition="" refreshonchanged="true" isdefaultvalue="false" calculateonrefresh="false" mobile="true" validatelibs="" editmode="01" optionseditmode="01" dialogview="" module="" optionsvalue="" refreshmode="1" refreshfields="bU" optionstext=""></select></td>
+            <td id="yzsy">印章所属事业部</td>
+            <td id="yzsy2"><select classname="cn.myapps.core.dynaform.form.ejb.SelectField" id="11e7-df09-cda54747-a4e8-9f75859f51f2" name="bU" discript="" readonlyshowvalonly="true" valuescript="" optionsscript="var@nbsp;deptId=getItemValue(@quot;district@quot;);//部门选择框名：部门(部门选择框勾选刷新，下拉框勾选重计算)@amp;#13;var@nbsp;opts=$TOOLS.createOptions();@amp;#13;var@nbsp;deptUnderList=getDepartmentsByParent(deptId);@amp;#13;opts.add(@quot;@quot;,@quot;@quot;);@amp;#13;for(var@nbsp;iter=deptUnderList.iterator();iter.hasNext();){@amp;#13;@nbsp;@nbsp;var@nbsp;deptUnder=iter.next();@amp;#13;@nbsp;@nbsp;var@nbsp;deptName=deptUnder.getName();@amp;#13;@nbsp;@nbsp;opts.add(deptName,@nbsp;deptName);@amp;#13;}@amp;#13;opts;" validaterule="" hiddenscript="" hiddenvalue="" hiddenprintscript="" printhiddenvalue="" texttype="text" readonlyscript="" fieldtype="VALUE_TYPE_VARCHAR" processdescription="[];[]" filtercondition="" refreshonchanged="false" isdefaultvalue="false" calculateonrefresh="true" mobile="true" validatelibs="" editmode="01" optionseditmode="01" dialogview="" module="" optionsvalue="" refreshmode="0" refreshfields="" optionstext=""></select></td>
+        </tr>
+        <tr style="height:25">
+            <td style="border: 1px solid rgb(180, 204, 238);" width="15%">申请原因</td>
+            <td colspan="3" style="text-align: left; border: 1px solid rgb(180, 204, 238);">&nbsp;<textarea style="margin: 0px; width:80%; height: 99px" classname="cn.myapps.core.dynaform.form.ejb.TextareaField" id="11e7-de40-eed02146-9661-a7f34ef8bb54" name="申请原因" readonlyshowvalonly="true" fieldtype="VALUE_TYPE_TEXT" discript="" validaterule="var@nbsp;msg@nbsp;=@nbsp;@#146;@#146;;@amp;#13;var@nbsp;rtn@nbsp;=@nbsp;getItemValue(@quot;申请原因@quot;);@nbsp;@amp;#13;if@nbsp;(rtn==null@nbsp;||@nbsp;rtn.length()==0){@amp;#13;&#9;msg@nbsp;=@nbsp;@quot;申请原因不能为空@quot;;@amp;#13;&#9;}@amp;#13;if(rtn.length()@gt;80){@amp;#13;&#9;msg@nbsp;=@nbsp;@quot;申请原因不能超过80个字@quot;;@amp;#13;&#9;}@amp;#13;msg;@amp;#13;@amp;#13;" valuescript="" hiddenscript="" hiddenvalue="" hiddenprintscript="" printhiddenvalue="" readonlyscript="" filtercondition="" refreshonchanged="false" isdefaultvalue="false" calculateonrefresh="false" mobile="true" validatelibs="" editmode="01" processdescription="[];[]" refreshmode="0" refreshfields=""></textarea></td>
+        </tr>
+        <tr style="height:25">
+            <td style="border: 1px solid rgb(180, 204, 238);" width="15%">上传文件</td>
+            <td colspan="3" style="text-align: left; border: 1px solid rgb(180, 204, 238);"><img src="plugins/attachmentuploadfield/attachment.gif" classname="cn.myapps.core.dynaform.form.ejb.AttachmentUploadField" id="11e7-e952-71f60ccd-9e78-6b30e7728fcb" type="attachmentupload" fieldtype="VALUE_TYPE_TEXT" openwatermark="false" watermarksupportmode="" watermarkscript="" name="file" validaterule="" validatelibs="" limitsize="" limitnumber="10" refreshonchanged="false" calculateonrefresh="false" readonlyshowvalonly="true" mobile="true" previewedit="true" supportsorting="false" discript="" hiddenscript="" hiddenvalue="" hiddenprintscript="" printhiddenvalue="" readonlyscript="" filepattern="00" filecatalog="" filetype="01" refreshmode="0" refreshfields="" customizetype="pdf" />&nbsp;&nbsp;<input classname="cn.myapps.core.dynaform.form.ejb.InputField" id="11e7-e955-dd11ea20-9e78-6b30e7728fcb" text="hidden" name="userType" texttype="hidden" fieldtype="VALUE_TYPE_VARCHAR" fieldkeyevent="Tabkey" readonlyshowvalonly="true" discript="用户类型" validaterule="" valuescript="#include@quot;getUserTypeByDeptid@quot;@amp;#13;(function(){@amp;#13;&#9;var@nbsp;deptid@nbsp;=@nbsp;getItemValueAsString(@quot;userDeptId@quot;);@amp;#13;@nbsp;@nbsp;@nbsp;@nbsp;@nbsp;@nbsp;@nbsp;@nbsp;var@nbsp;usertype=@quot;@quot;@amp;#13;@nbsp;@nbsp;@nbsp;@nbsp;@nbsp;@nbsp;@nbsp;@nbsp;println(deptid);@amp;#13;@nbsp;@nbsp;@nbsp;@nbsp;@nbsp;@nbsp;@nbsp;@nbsp;if(deptid!=null@nbsp;@amp;@amp;@nbsp;deptid!=@quot;@quot;@nbsp;){@amp;#13;&#9;usertype@nbsp;=@nbsp;getUserTypeByDeptid(deptid)@amp;#13;}@amp;#13;&#9;return@nbsp;usertype;&#9;@amp;#13;})()" hiddenscript="" hiddenvalue="" hiddenprintscript="" printhiddenvalue="" readonlyscript="" refreshonchanged="false" isdefaultvalue="false" calculateonrefresh="true" mobile="true" numberpattern="" filtercondition="" validatelibs="" editmode="01" refreshmode="0" refreshfields="" processdescription="[];[]" /></td>
+        </tr>
+        <tr style="height:25">
+            <td style="border: 1px solid rgb(180, 204, 238);" width="15%" colspan="4"><img src="plugins/includefield/includefield.gif" classname="cn.myapps.core.dynaform.form.ejb.IncludeField" id="11e7-dee2-2f05bd93-a4e8-9f75859f51f2" includetype="0" refreshonchanged="false" calculateonrefresh="false" enabled="false" valuescript="@quot;11e7-e6e3-ed1329a8-9d0a-1553beca36d6@quot;" hiddenscript="" hiddenvalue="" hiddenprintscript="" printhiddenvalue="" module="11e7-dee1-7b9c2d9c-a4e8-9f75859f51f2" viewid="11e7-e6e3-ed1329a8-9d0a-1553beca36d6" pageid="none" name="申请盖章文件" relate="true" fixation="false" fixationheight="pxpx" /></td>
+        </tr>
+        <tr style="height:25">
+            <td style="border: 1px solid rgb(180, 204, 238);" width="15%" colspan="4">备注:流程相关说明</td>
+        </tr>
+        <tr style="height:25">
+            <td style="border: 1px solid rgb(180, 204, 238);" width="15%">流程说明：</td>
+            <td colspan="3" style="text-align: center;">用章不同文件的需分开上传</td>
+        </tr>
+        <tr style="height:25">
+            <td style="border: 1px solid rgb(180, 204, 238);" width="15%">温馨提示</td>
+            <td colspan="3" style="text-align: center;">流程被驳回或自行撤销后，请30分钟后再对流程进行修改、提交，谢谢！</td>
+        </tr>
+    </tbody>
+</table>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script>
+function showOrHide(_val){
+	if(_val == "事业部章"){
+		$("#yzsy").show();
+		$("#yzsy2").show();
+		$("#yzdq").show();
+		$("#yzdq2").show();
+	}
+	if(_val == "大区章"){
+		$("#yzdq").show();
+		$("#yzdq2").show();
+		$("#yzsy").hide();
+		$("#yzsy2").hide();
+	}
+	if(_val == "" || _val == "总部章"){
+		$("#yzdq").hide();
+		$("#yzdq2").hide();
+		$("#yzsy").hide();
+		$("#yzsy2").hide();
+	}
+}
+setTimeout(function(){
+	$("select[name='sealType']").change(function(){
+		showOrHide(this.value);
+	});
+	showOrHide($("select[name='sealType']").val());
+},500);
+</script>

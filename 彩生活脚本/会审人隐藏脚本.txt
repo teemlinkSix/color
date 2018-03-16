@@ -1,0 +1,61 @@
+(function() {
+	//先获取当前用户ID
+	var userId = getWebUser().getId();
+	//获取会审人用户集合
+	var doc = getCurrentDocument();
+	var roleid="6";    //事业部总经理id
+	var roleid2="54"     //部门总监id
+	var departId = doc.getAuthor().getDefaultDepartment();   //获取流程发起人的默认部门id
+	//获取对应部门的事业部总经理人员
+	var procrssmans =  getUsersByDptIdAndRoleId(departId,roleid);
+	if(procrssmans!= null && procrssmans.size() > 0){
+		var userlist = procrssmans
+	}
+	else{
+		var deptProcess = createProcess("cn.myapps.core.department.ejb.DepartmentProcess");
+		var dept= deptProcess.doView(departId);
+		var odeps = deptProcess.getSuperiorDeptList(departId);//当前部门上级的id集合
+		if (odeps != null && odeps.size()>0){			
+			for (var it =odeps.iterator(); it.hasNext();){
+					var department = it.next().getId();
+					println("department----->>>"+department);
+					var procrssmans2 = getUsersByDptIdAndRoleId(department,roleid);
+					if(procrssmans2!= null || procrssmans2.size() > 0){
+						var userlist = procrssmans2;
+						break;
+						}
+						}
+		}
+	}
+	//获取对应部门的部门总监人员
+	var procrssmans3 =  getUsersByDptIdAndRoleId(departId,roleid);
+	if(procrssmans3!= null && procrssmans3.size() > 0){
+		var userlist2 = procrssmans3
+	}
+	else{
+		var deptProcess2 = createProcess("cn.myapps.core.department.ejb.DepartmentProcess");
+		var dept2= deptProcess2.doView(departId);
+		var odeps2 = deptProcess2.getSuperiorDeptList(departId);//当前部门上级的id集合
+		if (odeps2 != null && odeps2.size()>0){			
+			for (var it2 =odeps2.iterator(); it2.hasNext();){
+					var department2 = it2.next().getId();
+					var procrssmans3 = getUsersByDptIdAndRoleId(department,roleid);
+					if(procrssmans3!= null || procrssmans3.size() > 0){
+						var userlist2 = procrssmans3;
+						break;
+						}
+						}
+		}
+	}
+	userlist.addAll(userlist2);		
+	if (userlist != null && userlist.size() > 0) {
+		for(var iter = userlist.iterator();iter.hasNext();){
+		   var user = iter.next();
+		   //当前用户如果存在这个用户集里，就给它return true;直接返回了就不会在循环下去了
+		   if(userId.equals(user.getId())) {
+			   return false;
+		   }
+		}
+	}
+return true;
+})();

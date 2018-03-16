@@ -1,0 +1,4 @@
+ <tr>
+            <td style="border: 1px solid rgb(180, 204, 238);" width="15%">预算简况</td>
+            <td width="35%" colspan="4"><textarea style="margin: 0px; width:80%; height: 99px" classname="cn.myapps.core.dynaform.form.ejb.TextareaField" id="11e7-dfd1-030e582b-a4e8-9f75859f51f2" name="explain" readonlyshowvalonly="true" fieldtype="VALUE_TYPE_TEXT" discript="预算简况" validaterule="" valuescript="" hiddenscript="" hiddenvalue="" hiddenprintscript="" printhiddenvalue="" readonlyscript="" filtercondition="" refreshonchanged="false" isdefaultvalue="false" calculateonrefresh="false" mobile="true" validatelibs="" editmode="01" processdescription="[];[]" refreshmode="0" refreshfields=""></textarea></td>
+        </tr>

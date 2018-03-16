@@ -1,0 +1,4 @@
+		<tr>
+            <td style="border: 1px solid rgb(180, 204, 238); text-align: left;" width="15%"><span style="color: rgb(255, 0, 0);">*</span>主题</td>
+            <td colspan="5">&nbsp;<input style="width:650px;" classname="cn.myapps.core.dynaform.form.ejb.InputField" id="11e7-eafc-48e56298-b0b0-b70d8ec4e9c1" placeholder="XX部门XX员工奖惩方案申请" text="text" name="theme" texttype="text" fieldtype="VALUE_TYPE_VARCHAR" fieldkeyevent="Tabkey" readonlyshowvalonly="true" discript="" validaterule="" valuescript="" hiddenscript="" hiddenvalue="" hiddenprintscript="" printhiddenvalue="" readonlyscript="" refreshonchanged="false" isdefaultvalue="false" calculateonrefresh="false" mobile="true" numberpattern="" filtercondition="" validatelibs="core.dynaform.form.formfield.validate.checkEmpty_system" editmode="01" refreshmode="0" refreshfields="" processdescription="[];[]" /></td>
+        </tr>

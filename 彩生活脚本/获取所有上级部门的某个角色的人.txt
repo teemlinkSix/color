@@ -1,0 +1,65 @@
+要求获取--对应部门下的部门经理角色的所有人
+
+1、获取流程发起人
+2、获取流程发起人的默认部门
+3、根据部门和部门经理角色获取人
+4、把人添加到审批人列表
+
+
+(function(){
+	var doc = getCurrentDocument();
+	var roleid=11e7-a35d-7196be5d-8f06-2943767b56da;    //部门经理角色id
+	var departId = doc.getAuthor().getDefaultDepartment();   //获取流程发起人的默认部门id
+	var procrssmans =  getUsersByDptIdAndRoleId(departId,roleid);
+	return procrssmans;
+})();  
+
+
+
+要求-获取发起人默认部门的上级或本身部门的大区总经理的人---大区总经理是角色
+
+1、获取流程发起人
+2、获取流程发起人的默认部门
+3、在默认部门查找有没有大区总经理
+4、如果有就返回该部门的ID
+4、如果3是没有的，就往上级部门去找
+5、获取存在大区总经理角色的上级部门并返回id
+6、根据部门和部门经理角色获取人
+7、把人添加到审批人列表
+
+(function(){
+	var doc = getCurrentDocument();
+	var roleid="11e7-611f-ba868d61-8da6-abc73e2b4141";    //大区总经理角色id
+	var departId = doc.getAuthor().getDefaultDepartment();   //获取流程发起人的默认部门id
+	var procrssmans =  getUsersByDptIdAndRoleId(departId,roleid);
+	if(procrssmans!= null && procrssmans.size() > 0){
+		var userlist = procrssmans
+	}
+	else{
+		var deptProcess = createProcess("cn.myapps.core.department.ejb.DepartmentProcess");
+		var dept= deptProcess.doView(departId);
+		var odeps = deptProcess.getSuperiorDeptList(departId);//当前部门上级的id集合
+		if (odeps != null && odeps.size()>0){			
+			for (var it =odeps.iterator(); it.hasNext();){
+					var department = it.next().getId();
+					var procrssmans2 =	getUsersByDptIdAndRoleId(department,roleid);
+					if(procrssmans2!= null && procrssmans2.size() > 0){
+						var userlist = procrssmans2;
+						break;
+						}
+						}
+		}
+	}
+	return userlist;
+})();
+
+
+
+
+
+
+
+
+
+
+

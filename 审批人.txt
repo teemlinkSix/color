@@ -1,0 +1,59 @@
+事业部审批=事业部（事业部负责人）
+
+//表单A字段的选项为获取指定部门、角色下的所有用户对象
+//dptied：部门ID
+//roleid:岗位ID
+(function(){
+var dptid = getItemValueAsString("division");//获取事业部ID
+var roleid=getRoleIdByName("事业部负责人");
+var users = getUsersByDptIdAndRoleId(dptid,roleid);
+return users;
+})()
+
+大区审批事业部审批=大区（大区事业部负责人）
+
+//表单A字段的选项为获取指定部门、角色下的所有用户对象
+//dptied：部门ID
+//roleid:岗位ID
+(function(){
+var dptid = getItemValueAsString("district");//获取对应大区ID
+var roleid=getRoleIdByName("大区事业部负责人");
+var users = getUsersByDptIdAndRoleId(dptid,roleid);
+return users;
+})()
+
+产品公司部门负责人=产品公司（产品公司负责人）
+
+//表单A字段的选项为获取指定部门、角色下的所有用户对象
+//dptied：部门ID
+//roleid:岗位ID
+(function(){
+var dptid = getItemValueAsString("productCompany");//获取产品公司ID
+var roleid=getRoleIdByName("产品公司负责人");
+var users = getUsersByDptIdAndRoleId(dptid,roleid);
+return users;
+})()
+
+
+事业部/预算部负责人=事业部/预算管理部（部门负责人）
+//表单A字段的选项为获取指定部门、角色下的所有用户对象
+//dptied：部门ID
+//roleid:岗位ID
+(function(){
+var  dptid= getItemValueAsString("ysb"); 
+var roleid=getRoleIdByName("预算部负责人");
+var roleid=getRoleIdByName("预算部负责人");
+var users = getUsersByDptIdAndRoleId(dptid,roleid);
+return users;
+})()
+
+//综合部负责人
+//表单A字段的选项为获取指定部门、角色下的所有用户对象
+//dptied：部门ID
+//roleid:岗位ID
+(function(){
+var dptid = getItemValueAsString("zhb");//获取综合部ID
+var roleid=getRoleIdByName("综合部负责人");
+var users = getUsersByDptIdAndRoleId(dptid,roleid);
+return users;
+})()

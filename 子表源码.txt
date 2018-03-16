@@ -1,0 +1,18 @@
+<p>&nbsp;</p>
+<table width="80%" align="center" border="1" cellpadding="5" cellspacing="1" style="border: 1px solid rgb(180, 204, 238);">
+    <tbody>
+        <tr>
+            <td style="border: 1px solid rgb(180, 204, 238); text-align: left;" width="15%">申请报销月份</td>
+            <td><select classname="cn.myapps.core.dynaform.form.ejb.SelectField" id="11e7-f2f5-44b59691-b8ee-cdaecc8717f0" name="expenseMonth" discript="申请报销月份" readonlyshowvalonly="true" valuescript="" optionsscript="(function(){@amp;#13;var@nbsp;opts@nbsp;=@nbsp;$TOOLS.createOptions();@nbsp;//创建指定类对象@amp;#13;opts.add(@quot;一月@quot;,@quot;一月@quot;);@amp;#13;opts.add(@quot;二月@quot;,@quot;二月@quot;);@amp;#13;opts.add(@quot;三月@quot;,@quot;三月@quot;);@amp;#13;opts.add(@quot;四月@quot;,@quot;四月@quot;);@amp;#13;opts.add(@quot;五月@quot;,@quot;五月@quot;);@amp;#13;opts.add(@quot;六月@quot;,@quot;六月@quot;);@amp;#13;opts.add(@quot;七月@quot;,@quot;七月@quot;);@amp;#13;opts.add(@quot;八月@quot;,@quot;八月@quot;);@amp;#13;opts.add(@quot;九月@quot;,@quot;九月@quot;);@amp;#13;opts.add(@quot;十月@quot;,@quot;十月@quot;);@amp;#13;opts.add(@quot;十一月@quot;,@quot;十一月@quot;);@amp;#13;opts.add(@quot;十二月@quot;,@quot;十二月@quot;);@amp;#13;return@nbsp;opts;@amp;#13;})()" validaterule="" hiddenscript="" hiddenvalue="" hiddenprintscript="" printhiddenvalue="" texttype="text" readonlyscript="" fieldtype="VALUE_TYPE_VARCHAR" processdescription="[];[]" filtercondition="" refreshonchanged="false" isdefaultvalue="false" calculateonrefresh="false" mobile="true" validatelibs="" editmode="01" optionseditmode="01" dialogview="" module="" optionsvalue="" refreshmode="0" refreshfields="" optionstext=""></select></td>
+            <td style="border: 1px solid rgb(180, 204, 238); text-align: left;" width="15%">&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid rgb(180, 204, 238); text-align: left;" width="15%">招待费报销金额</td>
+            <td><input classname="cn.myapps.core.dynaform.form.ejb.InputField" id="11e7-f2f5-72809c52-b8ee-cdaecc8717f0" text="text" name="entertainmentExpense" texttype="text" fieldtype="VALUE_TYPE_NUMBER" fieldkeyevent="Tabkey" readonlyshowvalonly="true" discript="招待费金额" validaterule="" valuescript="" hiddenscript="" hiddenvalue="" hiddenprintscript="" printhiddenvalue="" readonlyscript="" refreshonchanged="false" isdefaultvalue="false" calculateonrefresh="false" mobile="true" numberpattern="" filtercondition="" validatelibs="" editmode="01" refreshmode="0" refreshfields="" processdescription="[];[]" /></td>
+            <td style="border: 1px solid rgb(180, 204, 238); text-align: left;" width="15%">&nbsp;交通费用报销金额</td>
+            <td>&nbsp;<input classname="cn.myapps.core.dynaform.form.ejb.InputField" id="11e7-f2f5-7f7012b3-b8ee-cdaecc8717f0" text="text" name="transportationExpense" texttype="text" fieldtype="VALUE_TYPE_NUMBER" fieldkeyevent="Tabkey" readonlyshowvalonly="true" discript="交通费用报销金额" validaterule="" valuescript="" hiddenscript="" hiddenvalue="" hiddenprintscript="" printhiddenvalue="" readonlyscript="" refreshonchanged="false" isdefaultvalue="false" calculateonrefresh="false" mobile="true" numberpattern="" filtercondition="" validatelibs="" editmode="01" refreshmode="0" refreshfields="" processdescription="[];[]" /></td>
+        </tr>
+    </tbody>
+</table>
+<p>&nbsp;</p>

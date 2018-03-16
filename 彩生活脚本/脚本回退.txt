@@ -1,0 +1,27 @@
+(function(){
+ var doc=getCurrentDocument();
+ var comment = "发起变更回退";          //备注
+ var flowoption = "81";           //标识为回退
+ var webuser="";
+ var actors = doc.getState().getActors(); //获取流程节点的所有审批人
+ for(var it11 = actors.iterator(); it11.hasNext();){
+ var actor = it11.next();
+ var uservo=getUserById(actor.getActorid());
+ webuser=new Packages.cn.myapps.core.user.action.WebUser(uservo);
+ var user = webuser;         //当前流程节点审批人
+ var process = getDocumentProcess();//获取当前申明文档业务处理类
+ var curDoc = findDocument(getCurrentDocument().getId());
+ var flowid = curDoc.getFlowid();
+ var params =new Packages.cn.myapps.base.action.ParamsTable();
+ params.setParameter("_flowid", flowid);
+ if(doc!=null){
+ var st=new Packages.cn.myapps.core.workflow.engine.StateMachine()
+ var nodert=st.getCurrUserNodeRT(doc,user)
+ var currnodeid=nodert.getNodeid();//获取当前节点ID
+ var nextnodeid = new Array();       
+ nextnodeid[0]="1509612198932";//发起人节点ID
+ //println("nextnodeid="+nextnodeid[0]);
+ process.doFlow(doc,params,currnodeid,nextnodeid,flowoption,comment,user);
+ }
+ }
+})();

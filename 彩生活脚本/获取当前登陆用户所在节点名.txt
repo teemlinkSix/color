@@ -1,0 +1,10 @@
+var nodeName="";
+var curDoc = getCurrentDocument();
+var webUser = getWebUser();
+var nodeRt = Packages.cn.myapps.core.workflow.engine.StateMachine.getCurrUserNodeRT(curDoc,webUser);
+if(nodeRt != null&& nodeRt!=""){
+    nodeName = nodeRt.getName();
+	}
+
+
+

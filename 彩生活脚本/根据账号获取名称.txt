@@ -1,0 +1,13 @@
+根据员工的oa账号获取员工的名字
+
+根据父表的oa字段的值-生成对应用户的名称
+
+var parent = getParentDocument();
+var loginno = parent.getItemValueAsString("userNo"); //申请人的oa账号  用户的账号
+//获取对应账号的id
+if(loginno!=null && loginno!=""){
+var usid = getUserIdByLoginno(loginno);
+var user = getUserById(usid)
+var userName= user.getName();
+}
+userName;

@@ -1,0 +1,18 @@
+(function(){
+var rtn = "";
+var value= getItemValueAsDouble("统计");
+println("value-------"+value);
+var user =getWebUser();//获取当前用户
+var roles = user.getRoles();//获取当前用户角色集
+for(var it = roles.iterator();roles!=null && it.hasNext();){
+var role = it.next();
+var rolename = role.getName();//获取角色名
+println("rolename-------"+rolename);
+	if(rolename == "开发" && value>10){
+	var rtn="您不能申请超过10元的单据";
+}
+}
+return rtn;
+})()
+
+

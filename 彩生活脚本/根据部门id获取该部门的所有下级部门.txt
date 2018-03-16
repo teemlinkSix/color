@@ -1,0 +1,13 @@
+(function(){
+var deptProcess = createProcess("cn.myapps.core.department.ejb.DepartmentProcess");
+var id=getWebUser().getDefaultDepartment();
+var opts=$TOOLS.createOptions();
+var deptUnderList=deptProcess.getUnderDeptList(id);
+opts.add("","");
+for(var iter=deptUnderList.iterator();iter.hasNext();){
+  var deptUnder=iter.next();
+  var deptName=deptUnder.getName();
+  opts.add(deptName, deptName);
+}
+return opts;
+})()

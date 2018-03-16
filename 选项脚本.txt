@@ -1,0 +1,7 @@
+(function(){
+var opts = $TOOLS.createOptions(); //创建指定类对象
+opts.add("---请选择---","");
+opts.add("审批中","审批中");
+opts.add("已完结","已完结");
+return opts;
+})()

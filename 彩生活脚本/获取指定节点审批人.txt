@@ -1,0 +1,17 @@
+var userlist = createObject("java.util.ArrayList");
+var doc = getCurrentDocument();
+var domainid = getDomainid();
+var nodeName="研究院审批";  //流程节点名称
+var sql="select id,actorid as item_actorid,name as item_name,'" + domainid + "' as domainid from T_ACTORHIS r where NODEHIS_ID in (select ID from t_relationhis where docid='"+doc.getId()+"' and startnodename='"+nodeName+"') ORDER BY r.PROCESSTIME DESC LIMIT 1";
+println("sql----"+sql);
+var datas = queryBySQL(sql);
+for (var it = datas.iterator(); it.hasNext();) {
+       var d = it.next();
+       var userid = d.getItemValueAsString("actorid");
+	   var userVO = getUserById(userid);
+	   println("userVO----"+userVO.getName());
+	   userlist.add(userVO)
+}
+userlist;
+
+
